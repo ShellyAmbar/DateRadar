@@ -1,3 +1,4 @@
+import {useNavigation} from "@react-navigation/native";
 import {Dimensions} from "react-native";
 import {
   Extrapolate,
@@ -13,6 +14,7 @@ const useScrollItem = ({
   scrollY,
   ...props
 }: UseScrollItemProps) => {
+  const navigation = useNavigation();
   const SRC_WIDTH = Dimensions.get("window").width;
   const CARD_LENGTH = SRC_WIDTH * 0.8;
   const CARD_HEIGHT = 200;
@@ -26,7 +28,7 @@ const useScrollItem = ({
   size.value = interpolate(
     isAnimateX ? scrollX : scrollY,
     inputRange,
-    [0.9, 1, 0.9],
+    [0.8, 1, 0.8],
     Extrapolate.CLAMP
   );
 
@@ -55,6 +57,8 @@ const useScrollItem = ({
     CARD_HEIGHT,
     CARD_LENGTH,
     cardStyle,
+    navigation,
+    SRC_WIDTH,
   };
 };
 

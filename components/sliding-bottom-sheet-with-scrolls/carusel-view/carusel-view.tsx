@@ -49,12 +49,11 @@ const CaruselView = ({
         }}
         key={scrollItem.index}
         style={{
-          marginTop: 30,
           width: "100%",
         }}
         ItemSeparatorComponent={() => (
           <Spacer
-            size={10}
+            size={20}
             isVertical={scrollItem.direction === Direction.Vertical}
           />
         )}
@@ -62,8 +61,10 @@ const CaruselView = ({
           justifyContent: "center",
           paddingHorizontal:
             scrollItem.direction === Direction.Horizontal ? 20 : 20,
-          paddingBottom: scrollItem.direction === Direction.Vertical ? 500 : 0,
-          paddingTop: scrollItem.direction === Direction.Vertical ? 20 : 0,
+
+          paddingTop: scrollItem.direction === Direction.Vertical ? 20 : 20,
+
+          paddingBottom: scrollItem.direction === Direction.Vertical ? 500 : 20,
         }}
         onTouchStart={onStartTouch}
         onTouchEnd={onEndTouch}

@@ -4,12 +4,13 @@ import {height} from "../../styles/styles";
 export default StyleSheet.create({
   container: {
     backgroundColor: GlobalColors.BgColors.Bg2,
-    height: height,
+    height: "100%",
     borderTopStartRadius: 25,
     borderTopEndRadius: 25,
     width: "100%",
     position: "absolute",
     top: height,
+    justifyContent: "space-between",
   },
   line: {
     alignSelf: "center",

@@ -29,79 +29,97 @@ const ScrollItem = ({
   isAnimateY,
   ...props
 }: ScrollItemProps) => {
-  const {CARD_LENGTH, cardStyle} = useScrollItem({
+  const {CARD_LENGTH, cardStyle, navigation, SRC_WIDTH} = useScrollItem({
     index: index,
     isAnimateX: isAnimateX,
     scrollX,
     scrollY,
   });
-
+  const SPACING = SRC_WIDTH * 0.02;
+  const SIDECARD_LENGTH = (SRC_WIDTH * 0.2) / 2;
   return (
-    <Animated.View
-      style={[
-        {
-          width: scrollDirection === Direction.Vertical ? "100%" : CARD_LENGTH,
-          height: 200,
-
-          overflow: "hidden",
-          borderRadius: 5,
-          marginLeft: 10,
-        },
-        {
-          ...cardStyle,
-        },
-      ]}
-      key={dataItem.index}
+    <Box
+      withoutFeedback
+      onPress={() => {
+        console.log("press");
+        navigation.navigate("Place");
+      }}
     >
-      <Image
-        source={dataItem.image}
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          borderRadius: 5,
-        }}
-      />
+      <Animated.View
+        style={[
+          {
+            shadowColor: "white",
+            shadowOffset: {
+              width: 0,
+              height: 4,
+            },
+            shadowOpacity: 0.4,
+            shadowRadius: 7,
 
-      <LinearGradient
-        colors={["transparent", "rgba(0,0,0,0.8)"]}
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          borderRadius: 5,
-          left: 0,
-          right: 0,
-          bottom: 0,
-        }}
-      />
-      <Box
-        style={{
-          paddingHorizontal: 16,
-          paddingVertical: 10,
-          width: "100%",
-          height: "100%",
-          justifyContent: "flex-end",
-        }}
+            elevation: 10,
+            backgroundColor: GlobalColors.BgColors.Bg1,
+            width:
+              scrollDirection === Direction.Vertical ? "100%" : CARD_LENGTH,
+            height: 200,
+            borderRadius: 10,
+            marginRight: scrollDirection === Direction.Horizontal ? 5 : 0,
+          },
+          {
+            ...cardStyle,
+          },
+        ]}
+        key={dataItem.index}
       >
-        <TextFactory
+        <Image
+          source={dataItem.image}
           style={{
-            ...(i18n.isRTL ? HebrewStyle.H6 : EnglishStyle.H6),
-            color: GlobalColors.TextColors.white,
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+            borderRadius: 5,
+          }}
+        />
+
+        <LinearGradient
+          colors={["transparent", "rgba(0,0,0,0.8)"]}
+          style={{
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+            borderRadius: 5,
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}
+        />
+        <Box
+          style={{
+            paddingHorizontal: 16,
+            paddingVertical: 10,
+            width: "100%",
+            height: "100%",
+            justifyContent: "flex-end",
           }}
         >
-          {dataItem.title}
-        </TextFactory>
-        <TextFactory
-          style={{
-            ...(i18n.isRTL ? HebrewStyle.BodyText1 : EnglishStyle.BodyText1),
-            color: GlobalColors.TextColors.white,
-          }}
-        >
-          {dataItem.address}
-        </TextFactory>
-      </Box>
-    </Animated.View>
+          <TextFactory
+            style={{
+              ...(i18n.isRTL ? HebrewStyle.H6 : EnglishStyle.H6),
+              color: GlobalColors.TextColors.white,
+            }}
+          >
+            {dataItem.title}
+          </TextFactory>
+          <TextFactory
+            style={{
+              ...(i18n.isRTL ? HebrewStyle.BodyText1 : EnglishStyle.BodyText1),
+              color: GlobalColors.TextColors.white,
+            }}
+          >
+            {dataItem.address}
+          </TextFactory>
+        </Box>
+      </Animated.View>
+    </Box>
   );
 };
 
