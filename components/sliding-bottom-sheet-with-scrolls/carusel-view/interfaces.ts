@@ -13,8 +13,9 @@ type ScrollItem = {
 
 type CaruselViewProps = {
   scrollItem: ScrollItem;
-  onStartDrag?: () => void;
-  onEndDrag?: () => void;
-  onStartTouch?: () => void;
+  onStartDrag: () => void;
+  onEndDrag: () => void;
+  onEndTouch: () => void;
+  onStartTouch: () => void;
 };
 export {CaruselViewProps, Direction, ScrollItem};

@@ -15,47 +15,21 @@ import Animated, {
 import {height} from "../../styles/styles";
 import FloatingButton from "../floating-button/floating-button";
 import {SlidingBottomSheetProps} from "./interfaces";
+import useSlidingBottomSheet from "./hooks/useSlidingBottomSheet";
 
 const SlidingBottomSheet = ({
   children,
   isGestureEnabled = true,
   ...props
 }: SlidingBottomSheetProps) => {
-  const translateY = useSharedValue(0);
-  const context = useSharedValue({y: 0});
-  var [showFloatingButton, setshowFloatingButton] = useState(true);
-
-  const gesture = Gesture.Pan()
-
-    .onStart(() => {
-      context.value = {y: translateY.value};
-    })
-    .onUpdate((e) => {
-      translateY.value = e.translationY + context.value.y;
-      translateY.value = Math.max(translateY.value, -height + 50);
-    })
-    .onEnd(() => {
-      if (translateY.value > -height / 3) {
-        translateY.value = withTiming(0, {duration: 100}, () => {
-          runOnJS(setshowFloatingButton)(true);
-        });
-      } else if (translateY.value < -height / 1.5) {
-        translateY.value = withSpring(-height + 50, {damping: 50}, () => {});
-      }
-    })
-    .enabled(isGestureEnabled);
-
-  const bottomSheetStyle = useAnimatedStyle(() => {
-    const borderRadius = interpolate(
-      translateY.value,
-      [-height + 200, -height + 50],
-      [25, 5],
-      Extrapolate.CLAMP
-    );
-    return {
-      transform: [{translateY: translateY.value}],
-      borderRadius: borderRadius,
-    };
+  const {
+    gesture,
+    showFloatingButton,
+    setshowFloatingButton,
+    translateY,
+    bottomSheetStyle,
+  } = useSlidingBottomSheet({
+    isGestureEnabled,
   });
   return (
     <GestureDetector gesture={gesture}>

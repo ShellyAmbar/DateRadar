@@ -14,13 +14,21 @@ const SlidingBottomSheetWithScrolls = ({
     <SlidingBottomSheet isGestureEnabled={isSlidingEnabled}>
       {scrolls?.map((scroll, index) => (
         <CaruselView
+          onEndTouch={() => {
+            console.log("onEndDrag");
+            setisSlidingEnabled(true);
+          }}
           onEndDrag={() => {
+            console.log("onEndDrag");
+
             setisSlidingEnabled(true);
           }}
           onStartDrag={() => {
+            //   console.log("onStartDrag");
             setisSlidingEnabled(false);
           }}
           onStartTouch={() => {
+            //   console.log("onStartDrag");
             setisSlidingEnabled(false);
           }}
           key={scroll.index}
