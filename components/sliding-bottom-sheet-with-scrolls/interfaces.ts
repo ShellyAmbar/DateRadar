@@ -1,21 +1,7 @@
-enum Direction {
-  Horizontal,
-  Vertical,
-}
-type DataItem = {
-  index: number;
-  title: string;
-  subTitle: string;
-  image: string;
-  onPress: () => void;
-};
-type ScrollItem = {
-  list: DataItem[];
-  direction: Direction;
-  index: number;
-};
+import {ScrollItem} from "./carusel-view/interfaces";
+
 type BottomSheetWithScrollsProps = {
   scrolls?: ScrollItem[];
 };
 
-export {BottomSheetWithScrollsProps, ScrollItem, Direction};
+export {BottomSheetWithScrollsProps};

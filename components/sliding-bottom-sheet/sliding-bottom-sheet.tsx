@@ -33,7 +33,6 @@ const SlidingBottomSheet = ({
     .onUpdate((e) => {
       translateY.value = e.translationY + context.value.y;
       translateY.value = Math.max(translateY.value, -height + 50);
-      console.log(translateY.value);
     })
     .onEnd(() => {
       if (translateY.value > -height / 3) {

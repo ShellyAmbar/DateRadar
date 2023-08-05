@@ -30,7 +30,6 @@ const i18n = {
           }
         );
 
-      console.log(i18n, i18next, RNI18nManager);
       resolve();
     });
   },

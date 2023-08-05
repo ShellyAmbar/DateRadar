@@ -10,6 +10,7 @@ type DataItem = {
 type ScrollItemProps = {
   scrollDirection: Direction;
   dataItem: DataItem;
+  scrollX: number;
 };
 
 export {DataItem, ScrollItemProps};
