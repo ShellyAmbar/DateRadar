@@ -1,0 +1,243 @@
+{
+  "app": {
+    "save": "שמור",
+    "procced": "המשך"
+  },
+  "error": {
+    "id_is_required": "חובה למלא תעודת זהות",
+    "id_is_not_valid": "תעודת זהות לא תקינה",
+    "phone_is_required": "חובה למלא מספר טלפון",
+    "phone_is_not_valid": "מספר טלפון לא תקין",
+    "password_is_required": "חובה למלא סיסמה"
+  },
+  "login": {
+    "login": "התחבר",
+    "enter_private_area": "כניסה לאיזור אישי",
+    "new_costumer": "לקוח חדש?",
+    "register_here": "הירשם כאן",
+    "forgot_password": "שכחתי סיסמה",
+    "one_time_code_login": "כניסה עם קוד חד-פעמי",
+    "tap_here": "לחץ כאן",
+    "id": "תעודת זהות",
+    "id_placeholder": "הזן את תעודן הזהות שלך",
+    "password": "סיסמה",
+    "password_placeholder": "הזן סיסמא",
+    "remember_me": "זכור אותי"
+  },
+  "registration_screen": {
+    "create_an_account": "בוא נתחיל ברישום שלך",
+    "reset_password": "איפוס סיסמה",
+    "id": "תעודת זהות",
+    "id_placeholder": "הזן את תעודן הזהות שלך",
+    "phone": "מספר טלפון",
+    "phone_placeholder": "הזן את מספר הטלפון שלך",
+    "remember_me": "זכור אותי",
+    "existing_costumer": "לקוח קיים?",
+    "login_here": "התחבר כאן",
+    "next": "המשך"
+  },
+  "choose_password_screen": {
+    "reset_password": "איפוס סיסמה",
+    "choose_password": "בחר סיסמה",
+    "password_title1": "בחר סיסמה",
+    "password_field1_placeholder": "הזן סיסמה",
+    "password_title2": "אמת את סיסמתך",
+    "password_field2_placeholder": "הזן סיסמה",
+    "your_password_must_include": "סיסמתך חייבת לכלול",
+    "at_least_8_characters": "לפחות 8 תווים",
+    "English_letters_upper_lower_case": "אותיות באנגלית קטנות וגדולות",
+    "at_least_1_digit": "לפחות ספרה אחת",
+    "passwords_do_not_match": "הסיסמהות אינן תואמות, אנא נסה שנית",
+    "next": "המשך"
+  },
+  "verification_code": {
+    "sms_verification": "קוד אימות נשלח לנייד שלך",
+    "enter_code_to_proceed": "להמשך הרשמה אנא הזינו את הקוד",
+    "the_code_is_in_the_way": "הקוד בדרך",
+    "code_is_wrong": "הקוד לא תקין אנא נסה שנית",
+    "secondes": "שניות",
+    "did_not_recieve_code": "לא קיבלת את הקוד?",
+    "click_here_to_resend": "לחץ כאן לשליחה חוזרת",
+    "instractions": "ההודעה “לחץ כאן לשליחה חוזרת תופיע במקום “הקוד בדרך” לאחר שהסתיימו ה 30 שניות.",
+    "note": "ההודעה “לחץ כאן לשליחה חוזרת תופיע במקום “הקוד בדרך” לאחר שהסתיימו ה 30 שניות.",
+    "verification_code_subtitle": "להמשך הרשמה אנא הזינו את הקוד",
+    "verification_title": "קוד אימות נשלח לנייד שלך",
+    "procced": "המשך"
+  },
+  "gender_selection": {
+    "what_is_your_gender": "מה הוא המין שלך?",
+    "female": "נקבה",
+    "male": "זכר"
+  },
+  "weight_selector": {
+    "what_is_your_weight": "מה הוא המשקל שלך?",
+    "your_weight": "המשקל שלך",
+    "proccess_pictures": "תמונת תהליך",
+    "updated_picture": "תמונה עדכנית",
+    "recommendation": " מומלץ להעלות תמונה עדכנית בה נראה כל הגוף כדי לעקוב אחר השינוי",
+    "current_picture": "תמונה נוכחית",
+    "press_here_to_upload": "לחץ כאן כדי לעלות את התמונה שלך בתחילת התהליך",
+    "do_not_worry_message": "אין מה לדאוג, לעולם לא נעשה שימוש בתמנות שלך",
+    "unit_of_measure": "ק״ג"
+  },
+  "height_selector": {
+    "what_is_your_height": "מה הגובה שלך?",
+    "unit_of_measure": "ס״מ"
+  },
+  "date_picker": {
+    "what_is_your_birthday": "מה הוא תאריך הלידה שלך?",
+    "day": "יום",
+    "month": "חודש",
+    "year": "שנה"
+  },
+  "pickup_test_process_stage_bar": {
+    "step_1": "מה תרצה להשיג",
+    "step_2": "השלמת פרטים",
+    "step_3": "הערכה בדרך אליך",
+    "step_4": "סריקת מבחנה",
+    "step_5": "ביצוע בדיקה",
+    "step_6": "תיאום איסוף"
+  },
+  "goals_in_registration": {
+    "what_you_want_to_achieve": "מה ברצונך להשיג באמצעות הבדיקה",
+    "must_choose_one": "חובה לסמן לפחות תשובה אחת",
+    "weight_loss": "ירידה במשקל",
+    "weight_gain": "עליה במשקל",
+    "improving_health": "שיפור הבריאות",
+    "balancing_sugar_levels": "איזון רמות סוכר",
+    "gastrointestinal_disorders": "הפרעות גסטרואינטסטינליות",
+    "treatment_of_fatigue": "טיפול בעייפות / חוסר חיוניות",
+    "improving_sports_performance": "חיטוב / שיפור ביצועים בספורט",
+    "error": "טעות בבחירת תשובה!",
+    "error_message": "אי אפשר לבחור לרדת במשקל ולעולת במשקל יחד אנא בחר אחד מהם.",
+    "next": "המשך"
+  },
+  "complete_information_sub_step": {
+    "title": "השלמת פרטים",
+    "personal_information": "פרטים אישיים",
+    "first_name": "שם פרטי",
+    "first_name_placeholder": "הכנס את השם הפרטי שלך",
+    "last_name": "שם משפחה",
+    "last_name_placeholder": "הכנס את שם המשפחה שלך",
+    "id": "תעודת זהות",
+    "date_of_birth": "תאריך לידה",
+    "gander": "מין",
+    "male": "זכר",
+    "female": "נקבה",
+    "communication_details": "פרטי תקשורת",
+    "email": "דואר אלקטרוני",
+    "phone": "מספר טלפון",
+    "address": "כתובת למשלוח",
+    "physical_data": "נתונים פיזיים",
+    "starting_weight": "משקל התחלתי",
+    "height": "גובה",
+    "kg": "ק''ג",
+    "cm": "ס''מ",
+    "current_photo": "תמונה עדכנית",
+    "image_desc1": "מומלץ להעלות תמונה עדכנית בה נראה כל הגוף כדי לעקוב אחר השינוי",
+    "image_desc2": "אין מה לדאוג, לעולם לא נעשה שימוש בתמונות שלך",
+    "tap_here": "לחץ כאן כדי להעלות את התמונה שלך בתחילת התהליך",
+    "note": "עליך לחתום על טופס ההסכמה לביצוע בדיקה גנטית ולאשר את תנאי השימוש, מדיניות פרטיות וביטול עסקה",
+    "required_field": "שדה חובה",
+    "next": "המשך לתנאי שימוש"
+  },
+  "contract_form": {
+    "terms_of_use_title": "תנאי שימוש",
+    "terms_of_use_desc": "תיאור ארוך של תנאי שימוש",
+    "privacy_policy_title": "מדיניות פרטיות",
+    "privacy_policy_desc": "תיאור ארוך של מדיניות פרטיות",
+    "cancellation_conditions_title": "תנאי ביטול עסקה",
+    "cancellation_conditions_desc": "תיאור ארוך של תנאי ביטול העסקה",
+    "next": "המשך",
+    "continue_privacy_policy": "המשך למדיניות פרטיות",
+    "continue_cancellation_conditions": "המשך לתנאי ביטול עסקה",
+    "full_name": "שם מלא",
+    "id": "תעודת זהות",
+    "signature_date": "תאריך חתימה",
+    "your_signature": "החתימה שלך",
+    "clear_signature": "נקה חתימה"
+  },
+  "package_on_way_to_you": {
+    "title": "הערכה בדרך אליך",
+    "desc": "מחכים שתחזור לכאן להמשך תהליך לאחר קבלת הערכה.",
+    "received_package": "קיבלתי את הערכה",
+    "contact_us": "צרו איתנו קשר",
+    "number": "+97233095244"
+  },
+  "tube_scan": {
+    "title": "סריקת המבחנה",
+    "description": "ברכותינו, קיבלת את ערכת הבדיקה להמשך אנא סרוק את הברקוד שעל המבחנה.",
+    "scan": "סרוק את הברקוד",
+    "contact_us": "צרו איתנו קשר",
+    "number": "+97233095244"
+  },
+  "tube_scan_premision": {
+    "title": "הרשה ל- MyGenes לגשת למצלמה שלך",
+    "description": "כדי שיתאפשר לסרוק את הברקוד של המבחנה עליך לאפשר לאפליקציה לגשת אל המצלמה שבמכשיר.",
+    "next": "המשך"
+  },
+  "tube_manually_input": {
+    "title": "הזנת מספר מבחנה ידנית",
+    "barcode_number": "מספר ברקוד",
+    "barcode_number_placeholder1": "הזן את מספר הברקוד",
+    "barcode_number_placeholder2": "הזן את מספר הברקוד שנית",
+    "not_succeeding": "לא מצליחים?",
+    "scan_barcode": "סרקו ברקוד",
+    "contact_us": "צרו איתנו קשר",
+    "number": "+97233095244",
+    "next": "המשך",
+    "barcode_doesnt_match": "הברקודים שהוזנו אינם תואמים, אנא נסה שנית"
+  },
+  "error_scanning_tube": {
+    "title": "תקלה בסריקה!",
+    "description": "ארעה תקלה בסריקת הברקוד, הזן את המספר ידנית או צור קשר עם שירות הלקוחות.",
+    "try_again": "ניסיון חוזר",
+    "scan_manually": "סרוק ידנית"
+  },
+  "barcode_entered_manually_successfully": {
+    "title": "ברקוד הוזן ידנית בהצלחה",
+    "barcode_number": "מספר מבחנה",
+    "next": ""
+  },
+  "performing_the_test": {
+    "title": "ביצוע הבדיקה",
+    "description": "יש לצפות בסרטון עד הסוף כדי להמשיך שים לב! יש לצום שעה לפני ביצוע הבדיקה",
+    "next": "המשך",
+    "contact_us": "צרו איתנו קשר",
+    "number": "+97233095244",
+    "link": "https://youtu.be/fGdbdWDBXhI"
+  },
+  "delivery_on_way_to_you": {
+    "title": "השליח בדרך אליך",
+    "description": "בדקות הקרובות תקבל הודעת SMS לתיאום מועד לאיסוף הערכה. אם הינך הלקוח מחוץ לישראל אנא עדכן את שירות הלקוחות לזימון איסוף הערכה מביתך.",
+    "next": "עבור לאזור האישי",
+    "contact_us": "צרו איתנו קשר",
+    "number": "+97233095244"
+  },
+  "address_for_pickup": {
+    "title": "תיאום איסוף הערכה",
+    "description": "לאחר שביצעת את הבדיקה עליך לתאם שליח לצורך איסוף המבחנה למעבדה.",
+    "my_address": "הכתובת שלי",
+    "next": "המשך",
+    "add_address": "הוסף כתובת",
+    "contact_us": "צרו איתנו קשר",
+    "number": "+97233095244",
+    "form_title": "הוספת כתובה חדשה לאיסוף",
+    "country": "מדינה",
+    "country_placeholder": "שם המדינה",
+    "city": "עיר",
+    "city_placeholder": "שם העיר",
+    "street": "רחוב",
+    "street_placeholder": "שם הרחוב",
+    "house_number": "מספר בית",
+    "house_number_placeholder": "מספר בית",
+    "apartment": "מספר דירה",
+    "apartment_placeholder": "מספר דירה",
+    "entrece": "כניסה",
+    "entrece_placeholder": "כניסה",
+    "code": "קוד כניסה",
+    "code_placeholder": "קוד כניסה",
+    "notes_to_messenger": "הערות לשליח",
+    "notes_to_messenger_placeholder": "ההערה שלך"
+  }
+}
