@@ -14,6 +14,8 @@ import {GlobalColors} from "@traveloffline/styles/global-colors";
 import i18n from "@traveloffline/services/i18n";
 import Spacer from "@traveloffline/components/controllers/spacer/spacer";
 import {BlurView} from "expo-blur";
+import SwipeButton from "@traveloffline/components/swipe-button/swipe-button";
+import AnimatedCircularButton from "@traveloffline/components/animated-circular-button/animated-circular-button";
 
 const PlaceScreen = (props: PlaceScreenProps) => {
   const opacity = useState(new Animated.Value(1))[0];
@@ -54,7 +56,7 @@ const PlaceScreen = (props: PlaceScreenProps) => {
       <Box
         style={{
           height: "100%",
-          flex: 1,
+          flex: 3,
           justifyContent: "flex-end",
           alignItems: "center",
           paddingHorizontal: 16,
@@ -94,22 +96,24 @@ const PlaceScreen = (props: PlaceScreenProps) => {
         > */}
         <BlurView
           tint="dark"
-          intensity={30}
+          intensity={10}
           style={{
             borderRadius: 20,
             overflow: "hidden",
             paddingVertical: 20,
             paddingHorizontal: 16,
-            width: width,
+
+            width: "100%",
+            alignSelf: "center",
             alignItems: "flex-start",
-            marginBottom: -10,
+            marginBottom: 40,
           }}
         >
           <TextFactory
             style={{
               ...(i18n.isRTL ? HebrewStyle.H1 : EnglishStyle.H1),
               color: GlobalColors.TextColors.white,
-              textShadowColor: "#9400D3",
+              textShadowColor: GlobalColors.Brand.secondary,
               textShadowRadius: 20,
               textShadowOffset: {
                 width: 7,
@@ -125,7 +129,7 @@ const PlaceScreen = (props: PlaceScreenProps) => {
               ...(i18n.isRTL ? HebrewStyle.H3 : EnglishStyle.H3),
               color: GlobalColors.TextColors.white,
 
-              textShadowColor: "#9400D3",
+              textShadowColor: GlobalColors.Brand.secondary,
               textShadowRadius: 20,
               textShadowOffset: {
                 width: 7,
@@ -141,11 +145,11 @@ const PlaceScreen = (props: PlaceScreenProps) => {
               ...(i18n.isRTL ? HebrewStyle.H3 : EnglishStyle.H3),
               color: GlobalColors.TextColors.white,
 
-              textShadowColor: "#9400D3",
+              textShadowColor: GlobalColors.Brand.secondary,
               textShadowRadius: 20,
               textShadowOffset: {
-                width: 7,
-                height: 7,
+                width: 5,
+                height: 5,
               },
               elevation: 20,
             }}
@@ -167,28 +171,10 @@ const PlaceScreen = (props: PlaceScreenProps) => {
         }}
       >
         <Spacer size={20} />
-        {/* <BlurView
-          intensity={50}
-          style={{
-            borderRadius: 20,
-            paddingVertical: 10,
-            paddingHorizontal: 11,
-          }}
-        > */}
-        <TextFactory
-          style={{
-            backgroundColor: "transparent",
-            width: "50%",
 
-            textAlign: "center",
-
-            color: GlobalColors.TextColors.white,
-            borderRadius: 20,
-          }}
-        >
-          kljkljklj
-        </TextFactory>
-        {/* </BlurView> */}
+        <SwipeButton onToggle={() => {}} />
+        <Spacer size={30} />
+        <AnimatedCircularButton />
       </Box>
     </Box>
   );

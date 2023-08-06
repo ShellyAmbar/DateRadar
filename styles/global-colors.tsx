@@ -1,9 +1,9 @@
 export const GlobalColors = {
   Brand: {
     primary: "#151515",
-    secondary: "#D1FF71",
-    thierd: "#FFFFFFFF",
-    fourth: "rgba(21, 21, 21, 0.8)",
+    secondary: "rgb(122, 0, 153)",
+    thierd: "rgb(255, 51, 153)",
+    fourth: "rgb(204, 0, 255)",
     Gradient: ["#9B0BF9", "#F74094"],
   },
   BgColors: {

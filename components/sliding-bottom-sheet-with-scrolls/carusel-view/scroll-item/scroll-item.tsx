@@ -44,6 +44,13 @@ const ScrollItem = ({
         console.log("press");
         navigation.navigate("Place");
       }}
+      style={{
+        justifyContent: "center",
+        alignItems: "center",
+
+        marginEnd: scrollDirection === Direction.Horizontal ? 10 : 0,
+        marginBottom: scrollDirection === Direction.Vertical ? 20 : 0,
+      }}
     >
       <Animated.View
         style={[
@@ -51,18 +58,18 @@ const ScrollItem = ({
             shadowColor: "white",
             shadowOffset: {
               width: 0,
-              height: 4,
+              height: 6,
             },
-            shadowOpacity: 0.4,
+            shadowOpacity: 0.5,
             shadowRadius: 7,
+            overflow: "hidden",
 
             elevation: 10,
             backgroundColor: GlobalColors.BgColors.Bg1,
             width:
               scrollDirection === Direction.Vertical ? "100%" : CARD_LENGTH,
             height: 200,
-            borderRadius: 10,
-            marginRight: scrollDirection === Direction.Horizontal ? 5 : 0,
+            borderRadius: 20,
           },
           {
             ...cardStyle,

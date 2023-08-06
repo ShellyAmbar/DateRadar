@@ -7,6 +7,8 @@ import ScrollItemView from "./scroll-item/scroll-item";
 import {DataItem} from "./scroll-item/interfases";
 import useCaruselView from "./hooks/useCaruselView";
 import Spacer from "@traveloffline/components/controllers/spacer/spacer";
+import {Box} from "@traveloffline/components/controllers/box/box";
+import {width} from "@traveloffline/styles/styles";
 
 const CaruselView = ({
   scrollItem,
@@ -35,7 +37,7 @@ const CaruselView = ({
         decelerationRate={0.8}
         snapToInterval={
           scrollItem.direction === Direction.Horizontal
-            ? CARD_LENGTH + SPACING * 1.5
+            ? CARD_LENGTH + SPACING
             : CARD_HEIGHT + SPACING * 1.5
         }
         disableIntervalMomentum={true}
@@ -50,17 +52,13 @@ const CaruselView = ({
         key={scrollItem.index}
         style={{
           width: "100%",
+          marginStart: scrollItem.direction === Direction.Horizontal ? 0 : 0,
         }}
-        ItemSeparatorComponent={() => (
-          <Spacer
-            size={20}
-            isVertical={scrollItem.direction === Direction.Vertical}
-          />
-        )}
         contentContainerStyle={{
-          justifyContent: "center",
+          //  justifyContent: "space-between",
+
           paddingHorizontal:
-            scrollItem.direction === Direction.Horizontal ? 20 : 20,
+            scrollItem.direction === Direction.Horizontal ? 10 : 20,
 
           paddingTop: scrollItem.direction === Direction.Vertical ? 20 : 20,
 
