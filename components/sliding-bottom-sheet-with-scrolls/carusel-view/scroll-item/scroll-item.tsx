@@ -35,8 +35,7 @@ const ScrollItem = ({
     scrollX,
     scrollY,
   });
-  const SPACING = SRC_WIDTH * 0.02;
-  const SIDECARD_LENGTH = (SRC_WIDTH * 0.2) / 2;
+
   return (
     <Box
       withoutFeedback

@@ -28,7 +28,7 @@ const useScrollItem = ({
   size.value = interpolate(
     isAnimateX ? scrollX : scrollY,
     inputRange,
-    [0.8, 1, 0.8],
+    [0.9, 1, 0.9],
     Extrapolate.CLAMP
   );
 

@@ -15,34 +15,15 @@ import i18n from "@traveloffline/services/i18n";
 import Spacer from "@traveloffline/components/controllers/spacer/spacer";
 import {BlurView} from "expo-blur";
 import SwipeButton from "@traveloffline/components/swipe-button/swipe-button";
-import AnimatedCircularButton from "@traveloffline/components/animated-circular-button/animated-circular-button";
+import Ripple from "@traveloffline/components/ripple-effect/ripple-effect";
+import styles from "./place-screen.styles";
+import HorizontalAnimatedWheel from "@traveloffline/components/horizontal-animated-wheel/horizontal-animated-wheel";
+import CardFlipAnimation from "@traveloffline/components/card-flip-animation/card-flip-animation";
+import Swiper from "@traveloffline/components/cars-swipe-animation/cars-swipe-animation";
+import usePlaceScreen from "./hooks/usePlaceScreen";
 
 const PlaceScreen = (props: PlaceScreenProps) => {
-  const opacity = useState(new Animated.Value(1))[0];
-
-  const fadeIn = () => {
-    Animated.timing(opacity, {
-      toValue: 1,
-      duration: 1000,
-      useNativeDriver: true,
-    }).start(() => {
-      fadeOut();
-    });
-  };
-  const fadeOut = () => {
-    Animated.timing(opacity, {
-      toValue: 0,
-      duration: 1000,
-      useNativeDriver: true,
-    }).start(() => {
-      fadeIn();
-    });
-  };
-
-  useEffect(() => {
-    fadeOut();
-  }, []);
-
+  const {opacity, isCheckedIn, setIsCheckedIn} = usePlaceScreen();
   return (
     <Box
       scroll
@@ -83,7 +64,7 @@ const PlaceScreen = (props: PlaceScreenProps) => {
             bottom: 0,
           }}
         />
-        {/* <Animated.View
+        <Animated.View
           style={{
             opacity: opacity,
             borderRadius: 20,
@@ -91,73 +72,72 @@ const PlaceScreen = (props: PlaceScreenProps) => {
             paddingHorizontal: 16,
             width: width,
             alignItems: "flex-start",
-            backgroundColor: "rgba(255,255,255,0.1)",
-          }}
-        > */}
-        <BlurView
-          tint="dark"
-          intensity={10}
-          style={{
-            borderRadius: 20,
-            overflow: "hidden",
-            paddingVertical: 20,
-            paddingHorizontal: 16,
-
-            width: "100%",
-            alignSelf: "center",
-            alignItems: "flex-start",
-            marginBottom: 40,
           }}
         >
-          <TextFactory
+          <BlurView
+            tint="dark"
+            intensity={10}
             style={{
-              ...(i18n.isRTL ? HebrewStyle.H1 : EnglishStyle.H1),
-              color: GlobalColors.TextColors.white,
-              textShadowColor: GlobalColors.Brand.secondary,
-              textShadowRadius: 20,
-              textShadowOffset: {
-                width: 7,
-                height: 7,
-              },
-              elevation: 20,
-            }}
-          >
-            TITLE
-          </TextFactory>
-          <TextFactory
-            style={{
-              ...(i18n.isRTL ? HebrewStyle.H3 : EnglishStyle.H3),
-              color: GlobalColors.TextColors.white,
+              borderRadius: 20,
+              overflow: "hidden",
+              paddingVertical: 20,
+              paddingHorizontal: 16,
 
-              textShadowColor: GlobalColors.Brand.secondary,
-              textShadowRadius: 20,
-              textShadowOffset: {
-                width: 7,
-                height: 7,
-              },
-              elevation: 20,
+              width: "100%",
+              alignSelf: "center",
+              alignItems: "flex-start",
+              marginBottom: 40,
             }}
           >
-            SUB TITLE
-          </TextFactory>
-          <TextFactory
-            style={{
-              ...(i18n.isRTL ? HebrewStyle.H3 : EnglishStyle.H3),
-              color: GlobalColors.TextColors.white,
+            <TextFactory
+              style={{
+                ...(i18n.isRTL ? HebrewStyle.H1 : EnglishStyle.H1),
+                color: GlobalColors.TextColors.white,
+                textShadowColor: GlobalColors.Brand.secondary,
+                textShadowRadius: 20,
+                textShadowOffset: {
+                  width: 7,
+                  height: 7,
+                },
+                elevation: 20,
+              }}
+            >
+              TITLE
+            </TextFactory>
+            <TextFactory
+              style={{
+                ...(i18n.isRTL ? HebrewStyle.H3 : EnglishStyle.H3),
+                color: GlobalColors.TextColors.white,
 
-              textShadowColor: GlobalColors.Brand.secondary,
-              textShadowRadius: 20,
-              textShadowOffset: {
-                width: 5,
-                height: 5,
-              },
-              elevation: 20,
-            }}
-          >
-            SUB TITLE
-          </TextFactory>
-        </BlurView>
-        {/* </Animated.View> */}
+                textShadowColor: GlobalColors.Brand.secondary,
+                textShadowRadius: 20,
+                textShadowOffset: {
+                  width: 7,
+                  height: 7,
+                },
+                elevation: 20,
+              }}
+            >
+              SUB TITLE
+            </TextFactory>
+            <TextFactory
+              style={{
+                ...(i18n.isRTL ? HebrewStyle.H3 : EnglishStyle.H3),
+                color: GlobalColors.TextColors.white,
+
+                textShadowColor: GlobalColors.Brand.secondary,
+                textShadowRadius: 20,
+                textShadowOffset: {
+                  width: 5,
+                  height: 5,
+                },
+                elevation: 20,
+              }}
+            >
+              SUB TITLE
+            </TextFactory>
+          </BlurView>
+        </Animated.View>
         <Spacer size={30} />
       </Box>
       <Box
@@ -172,9 +152,17 @@ const PlaceScreen = (props: PlaceScreenProps) => {
       >
         <Spacer size={20} />
 
-        <SwipeButton onToggle={() => {}} />
+        <SwipeButton
+          onToggle={(isToggled) => {
+            setIsCheckedIn(isToggled);
+          }}
+        />
         <Spacer size={30} />
-        <AnimatedCircularButton />
+        {isCheckedIn && (
+          <Ripple style={styles.buttonStart} onTap={() => {}}>
+            <TextFactory style={styles.buttonStartText}>Start</TextFactory>
+          </Ripple>
+        )}
       </Box>
     </Box>
   );
