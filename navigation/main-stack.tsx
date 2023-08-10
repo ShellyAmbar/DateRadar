@@ -3,6 +3,8 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import SplashScreen from "../screens/splash-screen/splash-screen";
 import AuthScreen from "../screens/auth-screen/auth-screen";
 import MainDrawer from "./main-drawer";
+import SwipeCardsScreen from "@traveloffline/screens/swipe-cards-screen/swipe-cards-screen";
+import PlaceScreen from "@traveloffline/screens/place-screen/place-screen";
 
 const MainStack = () => {
   const Stack = createNativeStackNavigator();
@@ -22,6 +24,16 @@ const MainStack = () => {
         name="Main"
         component={MainDrawer}
         options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SwipeCards"
+        component={SwipeCardsScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Place"
+        options={{headerTitle: ""}}
+        component={PlaceScreen}
       />
     </Stack.Navigator>
   );

@@ -1,9 +1,8 @@
-import {View, Text} from "react-native";
 import React from "react";
 import {Box} from "@traveloffline/components/controllers/box/box";
 
-const SwipePeopleScreen = () => {
+const SwipeCardsScreen = () => {
   return <Box></Box>;
 };
 
-export default SwipePeopleScreen;
+export default SwipeCardsScreen;

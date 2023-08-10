@@ -22,7 +22,7 @@ import CardFlipAnimation from "@traveloffline/components/card-flip-animation/car
 import Swiper from "@traveloffline/components/cars-swipe-animation/cars-swipe-animation";
 import usePlaceScreen from "./hooks/usePlaceScreen";
 
-const PlaceScreen = (props: PlaceScreenProps) => {
+const PlaceScreen = (props?: PlaceScreenProps) => {
   const {opacity, isCheckedIn, setIsCheckedIn} = usePlaceScreen();
   return (
     <Box
@@ -159,7 +159,12 @@ const PlaceScreen = (props: PlaceScreenProps) => {
         />
         <Spacer size={30} />
         {isCheckedIn && (
-          <Ripple style={styles.buttonStart} onTap={() => {}}>
+          <Ripple
+            style={styles.buttonStart}
+            onTap={() => {
+              props.navigation?.navigate("SwipeCards");
+            }}
+          >
             <TextFactory style={styles.buttonStartText}>Start</TextFactory>
           </Ripple>
         )}

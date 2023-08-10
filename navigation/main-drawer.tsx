@@ -45,11 +45,6 @@ const MainDrawer = () => {
         options={{headerTitle: ""}}
         component={SettingsScreen}
       />
-      <Drawer.Screen
-        name="Place"
-        options={{headerTitle: ""}}
-        component={PlaceScreen}
-      />
     </Drawer.Navigator>
   );
 };
