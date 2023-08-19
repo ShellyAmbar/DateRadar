@@ -21,6 +21,8 @@ import HorizontalAnimatedWheel from "@traveloffline/components/horizontal-animat
 import CardFlipAnimation from "@traveloffline/components/card-flip-animation/card-flip-animation";
 import Swiper from "@traveloffline/components/cars-swipe-animation/cars-swipe-animation";
 import usePlaceScreen from "./hooks/usePlaceScreen";
+import SemiCircleDonutChart, {PieChart} from "./SemiCircleDonutChart";
+import CircularProgress from "./SemiCircleDonutChart";
 
 const PlaceScreen = (props?: PlaceScreenProps) => {
   const {opacity, isCheckedIn, setIsCheckedIn} = usePlaceScreen();
@@ -158,6 +160,7 @@ const PlaceScreen = (props?: PlaceScreenProps) => {
           }}
         />
         <Spacer size={30} />
+
         {isCheckedIn && (
           <Ripple
             style={styles.buttonStart}
