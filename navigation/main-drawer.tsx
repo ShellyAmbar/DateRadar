@@ -5,6 +5,7 @@ import ProfileScreen from "../screens/profile-screen/profile-screen";
 import SettingsScreen from "../screens/settings-screen/settings-screen";
 import {GlobalColors} from "../styles/global-colors";
 import PlaceScreen from "@traveloffline/screens/place-screen/place-screen";
+import SwipeCardsScreen from "@traveloffline/screens/swipe-cards-screen/swipe-cards-screen";
 
 const MainDrawer = () => {
   const Drawer = createDrawerNavigator();
@@ -44,6 +45,16 @@ const MainDrawer = () => {
         name="Settings"
         options={{headerTitle: ""}}
         component={SettingsScreen}
+      />
+      <Drawer.Screen
+        name="SwipeCards"
+        component={SwipeCardsScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name="PlaceScreen"
+        options={{headerShown: false}}
+        component={PlaceScreen}
       />
     </Drawer.Navigator>
   );

@@ -10,6 +10,7 @@ import {Box} from "../controllers/box/box";
 
 const SlidingBottomSheetWithScrolls = ({
   scrolls,
+
   ...props
 }: BottomSheetWithScrollsProps) => {
   const [isSlidingEnabled, setisSlidingEnabled] = useState(true);

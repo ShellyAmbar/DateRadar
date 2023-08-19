@@ -16,6 +16,7 @@ const CaruselView = ({
   onStartDrag,
   onStartTouch,
   onEndTouch,
+
   ...props
 }: CaruselViewProps) => {
   const {

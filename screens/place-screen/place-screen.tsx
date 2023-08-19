@@ -17,13 +17,9 @@ import {BlurView} from "expo-blur";
 import SwipeButton from "@traveloffline/components/swipe-button/swipe-button";
 import Ripple from "@traveloffline/components/ripple-effect/ripple-effect";
 import styles from "./place-screen.styles";
-import HorizontalAnimatedWheel from "@traveloffline/components/horizontal-animated-wheel/horizontal-animated-wheel";
-import CardFlipAnimation from "@traveloffline/components/card-flip-animation/card-flip-animation";
-import Swiper from "@traveloffline/components/cars-swipe-animation/cars-swipe-animation";
 import usePlaceScreen from "./hooks/usePlaceScreen";
-import SemiCircleDonutChart, {PieChart} from "./SemiCircleDonutChart";
-import CircularProgress from "./SemiCircleDonutChart";
-
+import Close from "@traveloffline/assets/images/closeIcon.svg";
+import {CommonActions} from "@react-navigation/native";
 const PlaceScreen = (props?: PlaceScreenProps) => {
   const {opacity, isCheckedIn, setIsCheckedIn} = usePlaceScreen();
   return (
@@ -36,6 +32,20 @@ const PlaceScreen = (props?: PlaceScreenProps) => {
         flexGrow: 1,
       }}
     >
+      <Box
+        style={{
+          position: "absolute",
+          top: 50,
+          left: 16,
+          zIndex: 100,
+        }}
+        onPress={() => {
+          props?.navigation.goBack();
+        }}
+      >
+        <Close height={30} width={30} fill="#FFFF" />
+      </Box>
+
       <Box
         style={{
           height: "100%",
@@ -165,7 +175,7 @@ const PlaceScreen = (props?: PlaceScreenProps) => {
           <Ripple
             style={styles.buttonStart}
             onTap={() => {
-              props.navigation?.navigate("SwipeCards");
+              props?.navigation?.navigate("SwipeCards");
             }}
           >
             <TextFactory style={styles.buttonStartText}>Start</TextFactory>

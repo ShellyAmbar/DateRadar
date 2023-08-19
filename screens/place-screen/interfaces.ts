@@ -2,5 +2,6 @@ import {DataItem} from "@traveloffline/components/sliding-bottom-sheet-with-scro
 
 type PlaceScreenProps = {
   dataItem?: DataItem;
+  navigation: any;
 };
 export {PlaceScreenProps};

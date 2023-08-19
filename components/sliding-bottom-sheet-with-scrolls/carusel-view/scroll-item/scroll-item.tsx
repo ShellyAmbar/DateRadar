@@ -27,9 +27,10 @@ const ScrollItem = ({
   numTotalItems,
   isAnimateX,
   isAnimateY,
+
   ...props
 }: ScrollItemProps) => {
-  const {CARD_LENGTH, cardStyle, navigation, SRC_WIDTH} = useScrollItem({
+  const {CARD_LENGTH, cardStyle, SRC_WIDTH, navigation} = useScrollItem({
     index: index,
     isAnimateX: isAnimateX,
     scrollX,
@@ -41,7 +42,8 @@ const ScrollItem = ({
       withoutFeedback
       onPress={() => {
         console.log("press");
-        navigation.navigate("Place");
+
+        navigation.navigate("PlaceScreen");
       }}
       style={{
         justifyContent: "center",

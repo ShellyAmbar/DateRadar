@@ -25,16 +25,18 @@ const MainStack = () => {
         component={MainDrawer}
         options={{headerShown: false}}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="SwipeCards"
         component={SwipeCardsScreen}
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Place"
-        options={{headerTitle: ""}}
+        name="PlaceScreen"
+        options={{
+          headerShown: false,
+        }}
         component={PlaceScreen}
-      />
+      /> */}
     </Stack.Navigator>
   );
 };
