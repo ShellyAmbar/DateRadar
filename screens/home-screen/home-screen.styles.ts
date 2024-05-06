@@ -8,4 +8,15 @@ export default StyleSheet.create({
     height: "100%",
     backgroundColor: GlobalColors.BgColors.Bg1,
   },
+  searchBarContainer: {
+    position: "absolute",
+    start: 0,
+    end: 0,
+    top: 0,
+    paddingTop: 30,
+    paddingBottom: 20,
+    paddingHorizontal: 20,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });

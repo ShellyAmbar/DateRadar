@@ -19,7 +19,7 @@ import Ripple from "@traveloffline/components/ripple-effect/ripple-effect";
 import styles from "./place-screen.styles";
 import usePlaceScreen from "./hooks/usePlaceScreen";
 import Close from "@traveloffline/assets/images/closeIcon.svg";
-import {CommonActions} from "@react-navigation/native";
+
 const PlaceScreen = (props?: PlaceScreenProps) => {
   const {opacity, isCheckedIn, setIsCheckedIn} = usePlaceScreen();
   return (

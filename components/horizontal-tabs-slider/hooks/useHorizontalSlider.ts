@@ -8,8 +8,6 @@ const useHorizontalSlider = ({list, ...props}: UseHorizontalSliderProps) => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    console.log(listOfData);
-
     if (listOfData?.length > 0) {
       onSelectItem(listOfData[0]);
     }

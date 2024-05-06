@@ -48,6 +48,7 @@ const SwipeCardsScreen = (props) => {
 
   useEffect(() => {
     setusers(data);
+    setcurrentIndex(0);
   }, []);
 
   const rotate = position.x.interpolate({
