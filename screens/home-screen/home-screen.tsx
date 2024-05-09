@@ -3,18 +3,10 @@ import MapView from "../../components/map-view/map-view";
 import {Box} from "../../components/controllers/box/box";
 import Styles from "./home-screen.styles";
 import PlacesListsView from "@traveloffline/components/places-lists-view/places-lists-view";
-import SearchBar from "@traveloffline/components/search-bar/search-bar";
 import {LinearGradient} from "expo-linear-gradient";
 import Search from "@traveloffline/assets/images/search.svg";
-import {
-  Keyboard,
-  KeyboardAvoidingView,
-  Platform,
-  TouchableWithoutFeedback,
-  View,
-} from "react-native";
 import useHomeScreen from "./hooks/useHomeScreen";
-
+import SearchBar from "rn-autocomplete-search-bar";
 const HomeScreen = () => {
   const {isShowPlaces, setIsShowPlaces} = useHomeScreen();
   return (
@@ -31,6 +23,7 @@ const HomeScreen = () => {
         style={Styles.searchBarContainer}
       >
         <SearchBar
+          isCanclable={false}
           isAutoCompleteSearch={false}
           onSelectResult={(resultItem) => {
             console.log(resultItem);
