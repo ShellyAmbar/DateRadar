@@ -5,8 +5,23 @@ import {StatusBar} from "expo-status-bar";
 import {Box} from "./components/controllers/box/box";
 import {GlobalColors} from "./styles/global-colors";
 import {GestureHandlerRootView} from "react-native-gesture-handler";
-
+import {useEffect, useState} from "react";
+import * as Location from "expo-location";
 export default function App() {
+  const [location, setLocation] = useState(null);
+  useEffect(() => {
+    (async () => {
+      let {status} = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+      console.log(location);
+    })();
+  }, []);
+
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <Box style={styles.container}>

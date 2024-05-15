@@ -19,12 +19,22 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff",
-        "windowSoftInputMode": "adjustPan"
+        "windowSoftInputMode": "adjustPan",
+        "package": "com.shellyapps.dateradar",
+        "googleMapsApiKey": "AIzaSyAbC71b9HV0oXLVseLllK78gdXjBecuCDA"
       }
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
     },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Date Radar to use your location."
+        }
+      ]
+    ],
     "experiments": {
       "tsconfigPaths": true
     }

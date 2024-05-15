@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "317932265469",
+    "project_id": "dateradar-d33dd",
+    "storage_bucket": "dateradar-d33dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317932265469:android:ad61b4b42eaf39b8a68394",
+        "android_client_info": {
+          "package_name": "com.shellyapps.dateradar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7hXY5CfN59yuxnu9TaYT47DPZflEb2Ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
