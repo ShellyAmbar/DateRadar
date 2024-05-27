@@ -11,8 +11,10 @@ export default function App() {
   const [location, setLocation] = useState(null);
   useEffect(() => {
     (async () => {
+      console.log("location");
       let {status} = await Location.requestForegroundPermissionsAsync();
       if (status !== "granted") {
+        console.log("status !== granted");
         return;
       }
 

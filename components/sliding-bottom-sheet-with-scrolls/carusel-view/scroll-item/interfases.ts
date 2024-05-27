@@ -1,8 +1,5 @@
+import {Location} from "@traveloffline/app/features/places/interfaces";
 import {Direction} from "../interfaces";
-type Location = {
-  latitude: number;
-  longitude: number;
-};
 
 type DataItem = {
   index: number;
@@ -25,4 +22,4 @@ type ScrollItemProps = {
   isAnimateY?: boolean;
 };
 
-export {DataItem, ScrollItemProps, Location};
+export {DataItem, ScrollItemProps};

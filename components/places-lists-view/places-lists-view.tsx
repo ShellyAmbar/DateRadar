@@ -16,7 +16,7 @@ const PlacesListsView = ({...props}: PlacesListsViewProps) => {
           image: require("@traveloffline/assets/images/pub2.jpg"),
           index: 1,
           onPress: () => {},
-          location: {latitude: 32.07909, longitude: 34.76815},
+          location: {latitude: "32.07909", longitude: "34.76815"},
           address: "מנדלי מוכר ספרים 2, תל אביב-יפו",
         },
         {
@@ -26,7 +26,7 @@ const PlacesListsView = ({...props}: PlacesListsViewProps) => {
           image: require("@traveloffline/assets/images/pub2.jpg"),
           index: 2,
           onPress: () => {},
-          location: {latitude: 32.07909, longitude: 34.76815},
+          location: {latitude: "32.07909", longitude: "34.76815"},
           address: "רציף הרברט סמואל 90, תל אביב-יפו",
         },
         {
@@ -36,7 +36,7 @@ const PlacesListsView = ({...props}: PlacesListsViewProps) => {
           image: require("@traveloffline/assets/images/pub2.jpg"),
           index: 3,
           onPress: () => {},
-          location: {latitude: 32.06035, longitude: 34.76931},
+          location: {latitude: "32.07909", longitude: "34.76815"},
           address: "South Tel Aviv | Derech Jaffa 9",
         },
       ],
@@ -52,7 +52,7 @@ const PlacesListsView = ({...props}: PlacesListsViewProps) => {
           image: require("@traveloffline/assets/images/pub2.jpg"),
           index: 1,
           onPress: () => {},
-          location: {latitude: 32.02832, longitude: 34.78188},
+          location: {latitude: "32.07909", longitude: "34.76815"},
           address: "Central Tel Aviv – Mikveh Israel 10",
         },
         {
@@ -63,7 +63,7 @@ const PlacesListsView = ({...props}: PlacesListsViewProps) => {
           image: require("@traveloffline/assets/images/pub2.jpg"),
           index: 2,
           onPress: () => {},
-          location: {latitude: 32.06299, longitude: 34.772},
+          location: {latitude: "32.07909", longitude: "34.76815"},
           address: "Rothschild Boulevard 24, Tel Aviv-Yafo",
         },
         {
@@ -73,7 +73,7 @@ const PlacesListsView = ({...props}: PlacesListsViewProps) => {
           image: require("@traveloffline/assets/images/pub2.jpg"),
           index: 3,
           onPress: () => {},
-          location: {latitude: 32.06214, longitude: 34.77085},
+          location: {latitude: "32.07909", longitude: "34.76815"},
           address: "Lilienblum Street 30, Tel Aviv-Yafo",
         },
       ],
