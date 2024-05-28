@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {Place, PlacesState} from "./interfaces";
+import {PlacesState} from "./interfaces";
 
 const initialState: PlacesState = {
   places: [],
@@ -7,17 +7,12 @@ const initialState: PlacesState = {
   errorMessage: "",
 };
 
-export const PlacesSlice = createSlice({
+export const placesSlice = createSlice({
   name: "places",
   initialState,
   reducers: {
     checkInUserToPlaceFetch: (state, action) => {
       state.isLoading = true;
-      const placeIndex = state.places.findIndex(
-        (place, index) => place.id === action.payload.id
-      );
-      state.places[placeIndex] = action.payload;
-      state.isLoading = false;
     },
     checkInUserToPlaceSuccess: (state, action) => {
       state.isLoading = false;
@@ -26,7 +21,6 @@ export const PlacesSlice = createSlice({
         (place, index) => place.id === action.payload.id
       );
       state.places[placeIndex] = action.payload;
-      state.isLoading = false;
     },
     checkInUserToPlaceError: (state, action) => {
       state.isLoading = false;
@@ -36,13 +30,13 @@ export const PlacesSlice = createSlice({
       state.isLoading = true;
     },
     getPlacesSuccess: (state, action) => {
+      state.isLoading = false;
       state.places = action.payload;
       state.errorMessage = "";
-      state.isLoading = false;
     },
     getPlacesFailure: (state, action) => {
-      state.errorMessage = action.payload;
       state.isLoading = false;
+      state.errorMessage = action.payload;
     },
   },
 });
@@ -54,4 +48,4 @@ export const {
   getPlacesFetch,
   getPlacesSuccess,
   getPlacesFailure,
-} = userSlice.actions;
+} = placesSlice.actions;

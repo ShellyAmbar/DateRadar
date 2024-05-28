@@ -1,24 +1,48 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {UserState} from "./interfaces";
 
-const initialState = {
+const initialState: UserState = {
   user: null,
   isLoading: false,
+  errorMessage: "",
 };
 
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setIsLoading: (state, action) => {
-      state.isLoading = action.payload;
+    updateUserFetch: (state, action) => {
+      state.isLoading = true;
     },
-    updateUser: (state, action) => {
+    updateUserSuccess: (state, action) => {
       state.user = action.payload;
+      state.isLoading = false;
+      state.errorMessage = "";
     },
-    getUser: (state, action) => {
+    updateUserFailure: (state, action) => {
+      state.isLoading = false;
+      state.errorMessage = action.payload;
+    },
+    getUserFetch: (state, action) => {
+      state.isLoading = true;
+    },
+    getUserSuccess: (state, action) => {
       state.user = action.payload;
+      state.isLoading = false;
+      state.errorMessage = "";
+    },
+    getUserFailure: (state, action) => {
+      state.isLoading = false;
+      state.errorMessage = action.payload;
     },
   },
 });
 
-export const {addUser} = userSlice.actions;
+export const {
+  updateUserFetch,
+  updateUserSuccess,
+  updateUserFailure,
+  getUserFetch,
+  getUserSuccess,
+  getUserFailure,
+} = userSlice.actions;

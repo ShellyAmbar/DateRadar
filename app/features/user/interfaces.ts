@@ -36,4 +36,10 @@ type User = {
   };
 };
 
-export {GenderType, RelationshipGoalsType, RelationshipType, User};
+type UserState = {
+  user: User | null;
+  isLoading: boolean;
+  errorMessage: string;
+};
+
+export {GenderType, RelationshipGoalsType, RelationshipType, User, UserState};
