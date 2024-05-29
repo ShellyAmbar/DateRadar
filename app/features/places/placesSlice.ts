@@ -1,5 +1,5 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {PlacesState} from "./interfaces";
+import { createSlice } from "@reduxjs/toolkit";
+import { PlacesState } from "./interfaces";
 
 const initialState: PlacesState = {
   places: [],
@@ -49,3 +49,4 @@ export const {
   getPlacesSuccess,
   getPlacesFailure,
 } = placesSlice.actions;
+export default placesSlice.reducer;

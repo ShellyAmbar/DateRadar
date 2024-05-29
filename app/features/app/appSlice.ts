@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: AppState = {
   isLoading: false,
@@ -12,3 +12,4 @@ export const appSlice = createSlice({
 });
 
 export const {} = appSlice.actions;
+export default appSlice.reducer;

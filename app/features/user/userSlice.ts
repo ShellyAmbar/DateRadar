@@ -1,5 +1,5 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {UserState} from "./interfaces";
+import { createSlice } from "@reduxjs/toolkit";
+import { UserState } from "./interfaces";
 
 const initialState: UserState = {
   user: null,
@@ -46,3 +46,4 @@ export const {
   getUserSuccess,
   getUserFailure,
 } = userSlice.actions;
+export default userSlice.reducer;
