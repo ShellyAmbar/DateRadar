@@ -3,8 +3,19 @@ import {Box} from "../../components/controllers/box/box";
 import LottieView from "lottie-react-native";
 import Styles from "./splash-screen.styles";
 import {useFonts} from "expo-font";
+import {useDispatch, useSelector} from "react-redux";
+import {getUserFetch} from "@traveloffline/app/features/user/userSlice";
+
 const SplashScreen = (props: any) => {
   const animation = useRef(null);
+  const user = useSelector((state) => state.user.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUserFetch());
+  }, [dispatch]);
+
+  console.log("user ", user);
 
   const [isFontsLoaded] = useFonts({
     "Segoe UI": require("@traveloffline/assets/fonts/Segoe-UI.ttf"),
@@ -13,11 +24,14 @@ const SplashScreen = (props: any) => {
   });
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      props.navigation.navigate("Main");
-    }, 1500);
-    return () => clearTimeout(timeout);
-  }, [isFontsLoaded]);
+    if (user && isFontsLoaded) {
+      const timeout = setTimeout(() => {
+        props.navigation.navigate("Main");
+      }, 1500);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [isFontsLoaded, user]);
 
   useEffect(() => {}, []);
 

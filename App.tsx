@@ -7,6 +7,8 @@ import {GlobalColors} from "./styles/global-colors";
 import {GestureHandlerRootView} from "react-native-gesture-handler";
 import {useEffect, useState} from "react";
 import * as Location from "expo-location";
+import {Provider} from "react-redux";
+import {store} from "./app/store";
 export default function App() {
   const [location, setLocation] = useState(null);
   useEffect(() => {
@@ -25,14 +27,16 @@ export default function App() {
   }, []);
 
   return (
-    <GestureHandlerRootView style={{flex: 1}}>
-      <Box style={styles.container}>
-        <StatusBar backgroundColor={GlobalColors.Brand.primary} />
-        <NavigationContainer>
-          <MainStack />
-        </NavigationContainer>
-      </Box>
-    </GestureHandlerRootView>
+    <Provider store={store}>
+      <GestureHandlerRootView style={{flex: 1}}>
+        <Box style={styles.container}>
+          <StatusBar backgroundColor={GlobalColors.Brand.primary} />
+          <NavigationContainer>
+            <MainStack />
+          </NavigationContainer>
+        </Box>
+      </GestureHandlerRootView>
+    </Provider>
   );
 }
 

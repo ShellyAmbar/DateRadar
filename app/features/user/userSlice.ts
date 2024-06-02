@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { UserState } from "./interfaces";
+import {createSlice} from "@reduxjs/toolkit";
+import {UserState} from "./interfaces";
 
 const initialState: UserState = {
   user: null,
@@ -11,7 +11,7 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    updateUserFetch: (state, action) => {
+    updateUserFetch: (state) => {
       state.isLoading = true;
     },
     updateUserSuccess: (state, action) => {
@@ -23,13 +23,14 @@ export const userSlice = createSlice({
       state.isLoading = false;
       state.errorMessage = action.payload;
     },
-    getUserFetch: (state, action) => {
+    getUserFetch: (state) => {
       state.isLoading = true;
     },
     getUserSuccess: (state, action) => {
       state.user = action.payload;
       state.isLoading = false;
       state.errorMessage = "";
+      console.log("user", action.payload);
     },
     getUserFailure: (state, action) => {
       state.isLoading = false;
