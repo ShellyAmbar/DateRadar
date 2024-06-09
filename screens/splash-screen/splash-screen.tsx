@@ -4,7 +4,7 @@ import LottieView from "lottie-react-native";
 import Styles from "./splash-screen.styles";
 import {useFonts} from "expo-font";
 import {useDispatch, useSelector} from "react-redux";
-import {getUserFetch} from "@traveloffline/app/features/user/userSlice";
+import {getUserFetch} from "@traveloffline/slices/user/userSlice";
 
 const SplashScreen = (props: any) => {
   const animation = useRef(null);

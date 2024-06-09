@@ -8,7 +8,7 @@ import {GestureHandlerRootView} from "react-native-gesture-handler";
 import {useEffect, useState} from "react";
 import * as Location from "expo-location";
 import {Provider} from "react-redux";
-import {store} from "./app/store";
+import {store} from "./store";
 export default function App() {
   const [location, setLocation] = useState(null);
   useEffect(() => {
