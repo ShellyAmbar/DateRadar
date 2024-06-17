@@ -1,5 +1,5 @@
 import {call, put, takeEvery} from "redux-saga/effects";
-import {getUserSuccess} from "../../slices/user/userSlice";
+import {getUserSuccess} from "@traveloffline/features/user/userSlice";
 function* workGetUserFetch() {
   const user = yield call(() => fetch("https://api.thecatapi.com/v1/breeds"));
   const formattedUser = yield user.json();

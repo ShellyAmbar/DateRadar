@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {SearchItem} from "../interfaces";
-import UseSearchBarProps from "./interfaces";
+import {UseSearchBarProps} from "./interfaces";
 
 const useSearchBar = (props: UseSearchBarProps) => {
   const [selectedItem, setSelectedItem] = useState<SearchItem>({

@@ -1,6 +1,10 @@
 import {SearchItem} from "../interfaces";
 
+type UseDebounceProps = {
+  text: string;
+  delay: number;
+};
 type UseSearchBarProps = {
   data: SearchItem[];
 };
-export default UseSearchBarProps;
+export {UseSearchBarProps, UseDebounceProps};

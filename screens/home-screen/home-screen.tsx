@@ -54,6 +54,10 @@ const HomeScreen = () => {
             {id: "4", name: "barrca 5"},
             {id: "5", name: "barar 6"},
           ]}
+          debounceDelay={3000}
+          onDebounce={(text) => {
+            console.log("text after delay:", text);
+          }}
         />
       </LinearGradient>
 
