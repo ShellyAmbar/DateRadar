@@ -1,15 +1,24 @@
-import { StyleSheet } from "react-native";
-import colors from "../../../styles/Colors";
+import {GlobalColors} from "@traveloffline/styles/global-colors";
+import {StyleSheet} from "react-native";
 
 export default StyleSheet.create({
   button: {
-    borderWidth: 0,
-    backgroundColor: colors["color-basic-400"],
+    borderWidth: 1,
+    backgroundColor: "transparent",
     borderRadius: 16,
+    width: "100%",
+    paddingVertical: 12,
   },
-  text:{
-    color:'black',
-    fontSize:16,
-    fontWeight:'bold'
-  }
+  disabledButton: {
+    borderColor: GlobalColors.TextColors.secondary,
+  },
+  disabledText: {
+    color: GlobalColors.TextColors.secondary,
+  },
+  text: {
+    color: "black",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
 });
