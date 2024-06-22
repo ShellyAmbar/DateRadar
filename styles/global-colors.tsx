@@ -17,8 +17,9 @@ export const GlobalColors = {
     Bg8: "rgba(0, 0, 0, 0.98)",
   },
   TextColors: {
-    primary: "#2C2D2E",
+    primary: "#000",
     secondary: "#919399",
+    thierd: "#F5E7FF",
     white: "#FFFFFF",
   },
   IconsColors: {

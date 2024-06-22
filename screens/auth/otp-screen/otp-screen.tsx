@@ -1,6 +1,112 @@
 import {Box} from "@traveloffline/components/controllers/box/box";
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
+import Styles from "./otp-screen.styles";
+import Spacer from "@traveloffline/components/controllers/spacer/spacer";
+import {TouchableOpacity, Text} from "react-native";
+import Button from "@traveloffline/components/controllers/button/button";
+import Left from "@traveloffline/assets/images/direction-left.svg";
+import VerificationCodeInput from "react-native-otp-input-code";
+import {KeyboardType} from "./verification-code-input/interfaces";
+import {ConfirmationResult} from "firebase/auth";
 
-export default function OTPScreen() {
-  return <Box></Box>;
+export default function OTPScreen(props) {
+  const [otpCode, setOtpCode] = useState("");
+  const [message, showMessage] = useState("");
+  const [verificationResult, setVerificationResult] =
+    useState<ConfirmationResult>();
+  const inputRef = useRef(null);
+
+  const [isVarificationCodeValide, setIsVarificationCodeValide] =
+    useState(true);
+  const [isVarificationCodeSuccess, setIsVarificationCodeSuccess] =
+    useState(false);
+  const resetBoxes = () => {
+    setIsVarificationCodeValide(true);
+    setIsVarificationCodeSuccess(false);
+  };
+  const checkVerificationCode = async (code: string) => {
+    // props.navigation.replace("Main");
+
+    if (verificationResult) {
+      try {
+        const userCredential = await verificationResult.confirm(code);
+        console.log(userCredential);
+        setIsVarificationCodeSuccess(true);
+        setIsVarificationCodeValide(true);
+      } catch (err) {
+        setIsVarificationCodeSuccess(false);
+        setIsVarificationCodeValide(false);
+      }
+    }
+  };
+  useEffect(() => {
+    const {confirmResult} = props.route.params;
+    console.log(confirmResult?.verificationId);
+    setVerificationResult(confirmResult);
+    inputRef?.current?.focus();
+  }, []);
+
+  return (
+    <Box
+      scroll
+      keyboardDismissMode={"none"}
+      keyboardShouldPersistTaps={"always"}
+      contentContainerStyle={{flexGrow: 1}}
+      style={Styles.container}
+      automaticallyAdjustKeyboardInsets={false}
+    >
+      <Spacer size={32} />
+      <TouchableOpacity
+        onPress={() => props.navigation.replace("Phone")}
+        style={Styles.buttonLeft}
+      >
+        <Left />
+      </TouchableOpacity>
+      <Spacer size={36} />
+      <Text style={Styles.title}>{"Enter the OTP code"}</Text>
+      <Spacer size={36} />
+      <VerificationCodeInput
+        ref={inputRef}
+        isSecure={false}
+        textContentType="oneTimeCode"
+        keyboardType={KeyboardType.number_pad}
+        cellCount={6}
+        onComplete={checkVerificationCode}
+        onChangeText={(value) => {
+          if (value.length < 7) {
+            resetBoxes();
+          }
+        }}
+        isValid={isVarificationCodeValide}
+        isSuccess={isVarificationCodeSuccess}
+        textStyle={{color: "#FFFF"}}
+        containerStyle={{borderWidth: 1}}
+        errorTextStyle={{color: "red"}}
+        errorContainerStyle={{borderColor: "red", borderWidth: 2}}
+        autoFocus={true}
+        keyboardAppearance="default"
+        blurOnSubmit={false}
+        autoCorrect={false}
+        returnKeyType="done"
+      />
+      <Spacer size={16} />
+
+      <Button
+        isGradiant
+        buttonStyle={Styles.button}
+        label="Next"
+        disabled={!otpCode}
+        onPress={async () => {
+          try {
+            props.navigation.navigate("Main");
+          } catch (err) {
+            showMessage(`Error: ${err.message}`);
+            console.log(`Error: ${err.message}`);
+          }
+        }}
+      />
+
+      <Spacer size={16} />
+    </Box>
+  );
 }

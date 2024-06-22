@@ -20,6 +20,7 @@ export default function AuthScreen(props) {
         useNativeControls={false}
         resizeMode={ResizeMode.COVER}
         isLooping
+        isMuted={false}
       />
       <TextFactory style={Styles.title}>{"Welcome to Hive."}</TextFactory>
       <Box style={Styles.absoluteButtons}>
@@ -29,7 +30,7 @@ export default function AuthScreen(props) {
           label="Login"
           disabled={false}
           onPress={() => {
-            props.navigation.navigate("Phone", {isLoggin: true});
+            props.navigation.replace("Phone", {isLoggin: true});
           }}
         />
         <Spacer size={20} />
@@ -40,7 +41,7 @@ export default function AuthScreen(props) {
           <Spacer size={12} isVertical={false} />
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate("Phone", {isLoggin: false});
+              props.navigation.replace("Phone", {isLoggin: false});
             }}
           >
             <TextFactory style={Styles.bottomBorderTextBtn}>

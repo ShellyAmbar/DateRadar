@@ -4,12 +4,8 @@ const useAuthScreen = ({navigation}) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    const unsubscribe = navigation.addListener("focus", () => {
-      videoRef.current?.playAsync();
-    });
-
-    return unsubscribe;
-  }, [navigation]);
+    videoRef?.current?.playAsync();
+  }, []);
 
   return {videoRef};
 };

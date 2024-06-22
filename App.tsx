@@ -30,7 +30,6 @@ export default function App() {
     <Provider store={store}>
       <GestureHandlerRootView style={{flex: 1}}>
         <Box style={styles.container}>
-          <StatusBar backgroundColor={GlobalColors.Brand.primary} />
           <NavigationContainer>
             <MainStack />
           </NavigationContainer>

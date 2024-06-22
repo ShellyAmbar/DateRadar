@@ -6,4 +6,5 @@ export default interface ButtonProps extends ViewProps {
   buttonStyle?: ViewStyle;
   disableStyle?: ViewStyle;
   disabled?: boolean;
+  isGradiant?: boolean;
 }
