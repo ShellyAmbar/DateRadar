@@ -8,6 +8,7 @@ import Left from "@traveloffline/assets/images/direction-left.svg";
 import VerificationCodeInput from "react-native-otp-input-code";
 import {KeyboardType} from "./verification-code-input/interfaces";
 import {ConfirmationResult} from "firebase/auth";
+import CountdownTimer from "./countdown-timer/countdown-timer";
 
 export default function OTPScreen(props) {
   const [otpCode, setOtpCode] = useState("");
@@ -24,6 +25,7 @@ export default function OTPScreen(props) {
     setIsVarificationCodeValide(true);
     setIsVarificationCodeSuccess(false);
   };
+  const [showCountDown, setShowCountDown] = useState(true);
   const checkVerificationCode = async (code: string) => {
     // props.navigation.replace("Main");
 
@@ -33,6 +35,7 @@ export default function OTPScreen(props) {
         console.log(userCredential);
         setIsVarificationCodeSuccess(true);
         setIsVarificationCodeValide(true);
+        setShowCountDown(false);
       } catch (err) {
         setIsVarificationCodeSuccess(false);
         setIsVarificationCodeValide(false);
@@ -87,24 +90,44 @@ export default function OTPScreen(props) {
         keyboardAppearance="default"
         blurOnSubmit={false}
         autoCorrect={false}
-        returnKeyType="done"
+        returnKeyType="none"
       />
       <Spacer size={16} />
-
-      <Button
-        isGradiant
-        buttonStyle={Styles.button}
-        label="Next"
-        disabled={!otpCode}
-        onPress={async () => {
-          try {
-            props.navigation.navigate("Main");
-          } catch (err) {
-            showMessage(`Error: ${err.message}`);
-            console.log(`Error: ${err.message}`);
-          }
-        }}
-      />
+      <Box style={Styles.bottomView}>
+        {showCountDown ? (
+          <CountdownTimer
+            duration={20}
+            height={60}
+            width={80}
+            onFinish={() => {
+              setShowCountDown(false);
+            }}
+          />
+        ) : (
+          <TouchableOpacity
+            onPress={() => {
+              setShowCountDown(true);
+            }}
+          >
+            <Text style={Styles.sendAgainText}>{"Send again"}</Text>
+          </TouchableOpacity>
+        )}
+        <Spacer size={32} />
+        <Button
+          isGradiant
+          buttonStyle={Styles.button}
+          label="Next"
+          disabled={!otpCode}
+          onPress={async () => {
+            try {
+              props.navigation.navigate("Main");
+            } catch (err) {
+              showMessage(`Error: ${err.message}`);
+              console.log(`Error: ${err.message}`);
+            }
+          }}
+        />
+      </Box>
 
       <Spacer size={16} />
     </Box>

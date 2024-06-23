@@ -42,8 +42,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 30,
     alignSelf: "center",
+  },
+  bottomView: {
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
     position: "absolute",
     bottom: 16,
+  },
+  sendAgainText: {
+    color: GlobalColors.TextColors.white,
+    fontSize: 18,
   },
   title: {
     alignSelf: "flex-start",
