@@ -20,7 +20,7 @@ export default function AuthScreen(props) {
         useNativeControls={false}
         resizeMode={ResizeMode.COVER}
         isLooping
-        isMuted={false}
+        isMuted={true}
       />
       <TextFactory style={Styles.title}>{"Welcome to Hive."}</TextFactory>
       <Box style={Styles.absoluteButtons}>
