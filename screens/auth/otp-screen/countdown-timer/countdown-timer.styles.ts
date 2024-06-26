@@ -14,6 +14,7 @@ const styles = ({width, height}: {width: number; height: number}) =>
     text: {
       fontSize: 20,
       fontWeight: "bold",
+      color: "#FFFF",
     },
   });
 export default styles;

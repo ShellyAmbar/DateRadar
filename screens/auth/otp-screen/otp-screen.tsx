@@ -8,7 +8,7 @@ import Left from "@traveloffline/assets/images/direction-left.svg";
 import VerificationCodeInput from "react-native-otp-input-code";
 import {KeyboardType} from "./verification-code-input/interfaces";
 import {ConfirmationResult} from "firebase/auth";
-import CountdownTimer from "./countdown-timer/countdown-timer";
+import CircularTimer from "react-native-animated-circular-counter";
 
 export default function OTPScreen(props) {
   const [otpCode, setOtpCode] = useState("");
@@ -95,13 +95,19 @@ export default function OTPScreen(props) {
       <Spacer size={16} />
       <Box style={Styles.bottomView}>
         {showCountDown ? (
-          <CountdownTimer
-            duration={20}
+          <CircularTimer
+            duration={10}
             height={60}
             width={80}
             onFinish={() => {
               setShowCountDown(false);
             }}
+            progressColor="red"
+            circleColor="white"
+            isCountDown={true}
+            animateFillProgress={false}
+            intervalDuration={500}
+            strokeWidth={8}
           />
         ) : (
           <TouchableOpacity

@@ -35,6 +35,7 @@
     "lottie-react-native": "6.7.0",
     "react": "18.2.0",
     "react-native": "0.74.2",
+    "react-native-animated-circular-counter": "^1.0.2",
     "react-native-gesture-handler": "~2.16.1",
     "react-native-maps": "1.14.0",
     "react-native-otp-input-code": "^1.0.6",
